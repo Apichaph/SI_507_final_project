@@ -77,7 +77,7 @@ The second way is to submit an input and the program will return a related outpu
 <br>
 
 **Apichaph_03_game_ranking**
-- This part is to achieve goal 1 and 2. I started with counting how many user own this game and then rank it. I did the same way to count how long people spent time on this game and then rank it. The final structure are [{"rank": int, "appid": str, "name": str, "count": int}, ...] and [{"rank": int, "appid": str, "name": str, "playtime": int}, ...]. I stored each list separately in json files. The one containing count (goal 1) is stored in __"ranking_owned_game"__ and another one containing playtime (goal 2) is stored in __"ranking_duration_game"__
+- This part is to achieve goal 1 and 2. I started from counting how many user own this game and then rank it. I did the same way to count how long people spent time on this game and then rank it. The final structure are [{"rank": int, "appid": str, "name": str, "count": int}, ...] and [{"rank": int, "appid": str, "name": str, "playtime": int}, ...]. I stored each list separately in json files. The one containing count (goal 1) is stored in __"ranking_owned_game"__ and another one containing playtime (goal 2) is stored in __"ranking_duration_game"__
 
 <br>
 
@@ -93,7 +93,7 @@ The second way is to submit an input and the program will return a related outpu
 - This part is to achieve goal 3. I made an undirected graph by connecting every game a single user ID own and I repeated it for every Steam user in my sample. For example, if the first person own game 'A', 'B', and 'C', I created the link of A&B, A&C, and B&C. Note that A&B are the same as B&A.
 
 - An example structure of this graph is {'A': vertex_object_A, 'B': vertex_object_B, 'C': vertex_object_C}.
-    Meanwhile, vertex object A has an attribute (connectedTo) to store the neighbors and weight. For example, vertex_object_A.connectedTo will return {'B':1, 'C':1}. If the next person own game 'A' and 'B', vertex_object_A.connectedTo will return {'B:2, 'C':1} and vertex_object_B.connectedTo will return {'A':2, 'C':1}
+    Meanwhile, vertex object A has an attribute (connectedTo) to store its neighbors and weight. For example, vertex_object_A.connectedTo will return {'B':1, 'C':1}. If the next person own game 'A' and 'B', vertex_object_A.connectedTo will return {'B':2, 'C':1} and vertex_object_B.connectedTo will return {'A':2, 'C':1}
 
 - The presentation of the graph is stored in json file called __"Steam_graph_to_store"__. The structure of this data is 
 
@@ -104,7 +104,7 @@ The second way is to submit an input and the program will return a related outpu
 
 - In order to read __"Steam_graph_to_store.json"__, use file __"Steam_graph_to_store.py"__ to read it. This file will convert json file into a graph object.
 
-- After I made a graph and finished connecting games of each user, I needed to rank it base on how many people own the combination. First, I needed to convert the graph into an appropriate structure because there are redundant data in the graph. For example, as I mention above, vertex_object_A shows that it connects to 'B' with weight 2 and vertex_object_B shows that it connects to 'A' with weight 2.
+- After I made a graph and finished connecting games of each user, I needed to rank it base on how many people own the combination. First, I needed to convert the graph into an appropriate structure because there is redundant data in the graph. For example, as I mention above, vertex_object_A shows that it connects to 'B' with weight 2 and vertex_object_B shows that it connects to 'A' with weight 2.
 
 - I made a new key from games e.g. __'A' & 'B'__ and store its weight as a value in a new dictionary. Then, when I met __'B' & 'A'__, I can ignore this combination (because I already keep it in a new dictionary) and move on to the next combination. Then, I rank the combination base on the weight (how many users own this combination). The data is stored in json file called __"ranking_combination"__
 
@@ -117,7 +117,7 @@ The second way is to submit an input and the program will return a related outpu
 
 
 **Apichaph_05_game_id_name**
-- This process used cache from the second step, __"Cleaned_data_cache"__. I extract game ID and game name and stored it in json file called __"game_id_name"__. This will help checking whether the game in in the project or not, and help retrieve news from Steam API.
+- This process used cache from the second step, __"Cleaned_data_cache"__. I obtained game ID and game name and stored it in json file called __"game_id_name"__. This will help checking whether the game in in the project or not, and help retrieve news from Steam API.
 
 <br>
 
