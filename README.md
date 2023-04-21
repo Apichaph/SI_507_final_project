@@ -42,8 +42,6 @@ The second way is to submit an input and the program will return a related outpu
 
 <p align="center"><img src="images/response_example.png" alt="response_example" width=800 hight=700></p>
 
-
-response_example
 - Then, I stored Steam ID that I already made a call in json file called __"SteamID_cache"__. If the ID is valid, it is stored in "valid_ID" key. If the ID is invalid, it is stored in "invalid_ID" key. This allows me to check whether I have already retrieved data for that particular ID and help to avoid redundant API calls. Also, since I can make a 100,000 call per day, I can learn the pattern of valid and invalid ID, and change a Steam ID random generate function to increase the chance of getting a valid ID.
     <p style="text-align: center;">Screen shot from "SteamID_cache"</p>
 
