@@ -123,9 +123,10 @@ The second way is to submit an input and the program will return a related outpu
 
 <p style="text-align: center;">Screen shot from "game_id_name"</p>
 <p align="center"><img src="images/game_id_name.png" alt="game_id_name" width=800 hight=700></p>
- 
+
 **Apichaph_06_Flask**
 - Flask part, creating a webpage to present data with web-user.
+- In this code, I retrieve API call to get the latest 50 news of a specific game.
 
 
 
