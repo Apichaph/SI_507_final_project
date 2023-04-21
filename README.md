@@ -40,8 +40,8 @@ The second way is to submit an input and the program will return a related outpu
     <p style="text-align: center;">Screen shot from "SteamID_cache"</p>
 
 
-<p align="center"><img src="images/steamID_cache_1.png" alt="steamID_cache1" width=800 hight=700></p>
-<p align="center"><img src="images/steamID_cache_2.png" alt="steamID_cache2" width=800 hight=700></p>
+<p align="center"><img src="images/steamIDcache_1.png" alt="steamID_cache1" width=800 hight=700></p>
+<p align="center"><img src="images/steamIDcache_2.png" alt="steamID_cache2" width=800 hight=700></p>
 
 <br>
 
