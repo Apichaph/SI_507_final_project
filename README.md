@@ -85,14 +85,23 @@ The second way is to submit an input and the program will return a related outpu
 <p align="center"><img src="images/rank_duration_game.png" alt="rank_duration_game" width=800 hight=700></p>
 
 **Apichaph_04_game_graph**
-- This part is to achieve goal 3. I made the graph to connect every game that a single user ID own and I repeated it for every Steam user in my sample. For example, if the first person own game 'A', 'B', and 'C', I created the link of A&B, A&C, and B&C. Note that A&B are the same as B&A, so, this is an undirected graph
+- This part is to achieve goal 3. I made an undirected graph by connecting every game a single user ID own and I repeated it for every Steam user in my sample. For example, if the first person own game 'A', 'B', and 'C', I created the link of A&B, A&C, and B&C. Note that A&B are the same as B&A.
 
 - An example structure of this graph is {'A': vertex_object_A, 'B': vertex_object_B, 'C': vertex_object_C}.
-    Meanwhile, vertex object A has an attribute (connectedTo) to store the neighbors and weight. For example, vertex_object_A.connectedTo will return {'B':1, 'C':1}. If the next person own game 'A' and 'B', vertex_object_A.connectedTo will return {'B':2, 'C':1} and vertex_object_B.connectedTo will return {'A':2, 'C':1}
+    Meanwhile, vertex object A has an attribute (connectedTo) to store the neighbors and weight. For example, vertex_object_A.connectedTo will return {'B':1, 'C':1}. If the next person own game 'A' and 'B', vertex_object_A.connectedTo will return {'B:2, 'C':1} and vertex_object_B.connectedTo will return {'A':2, 'C':1}
 
-- After I made a graph and finished linking games of each user, I needed to rank it base on how many people own the combination. First, I needed convert the graph into an appropriate structure because there are redundant data in the graph. For example, as I mention above, vertex_object_A shows that it connects to 'B' with weight 2 and vertex_object_B shows that it connects to 'A' with weight 2.
+- The presentation of the graph is stored in json file called __"Steam_graph_to_store"__. The structure of this data is 
 
-- I made a new key from games e.g. __'A' & 'B'__ and store its weight as a value in a new dictionary. Then, if I met __'B' & 'A'__, I will ignore this combination (because I already keep it in a new dictionary) and move on to the next combination. Then, I rank the combination base on the weight (how many users own this combination). The data is stored in json file called __"ranking_combination"__
+    {game name which is a str : {another game name : weight which is an int, another game name : weight,...},...}
+
+<p style="text-align: center;">Screen shot from "Steam_graph_to_store"</p>
+<p align="center"><img src="images/Steam_graph_to_store.png" alt="Steam_graph_to_store" width=800 hight=700></p>
+
+- In order to read __"Steam_graph_to_store.json"__, use file __"Steam_graph_to_store.py"__ to read it. This file will convert json file into a graph object.
+
+- After I made a graph and finished connecting games of each user, I needed to rank it base on how many people own the combination. First, I needed to convert the graph into an appropriate structure because there are redundant data in the graph. For example, as I mention above, vertex_object_A shows that it connects to 'B' with weight 2 and vertex_object_B shows that it connects to 'A' with weight 2.
+
+- I made a new key from games e.g. __'A' & 'B'__ and store its weight as a value in a new dictionary. Then, when I met __'B' & 'A'__, I can ignore this combination (because I already keep it in a new dictionary) and move on to the next combination. Then, I rank the combination base on the weight (how many users own this combination). The data is stored in json file called __"ranking_combination"__
 
 - The structure of this file is [{"rank":int, "name":str, "count":int},.....]
 
