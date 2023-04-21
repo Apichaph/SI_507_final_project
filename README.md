@@ -12,13 +12,13 @@ There are 2 ways to interact with the project. The first way is choosing the typ
 
     1) rank by the number of Steam users (in this sample) owning the games 
     2) rank by the total amount of time Steam users (in this sample) have spent on the games and 
-    3) rank by the number of Steam users (in this sample) owning the game combination e.g. how many user own the sim 3 and 4 together
+    3) rank by the number of Steam users (in this sample) owning the game combination e.g. how many users own the sim 3 and 4 together
 
 The second way is to submit an input and the program will return a related output. There are 3 interaction panels. 
     
     1) submit a game ID and get a game name as an output or submit a game name and get a game ID as an output. This will help web-users to check that their favorite games are included in this project or not.
     2) submit a game ID and get 50 latest news of that game as an output.
-    3) submit a game ID or game name to see the related ranks of that game, or submit a rank to see the what game is on that rank.
+    3) submit a game ID or game name to see the related ranks of that game, or submit a rank to see what games are on that rank.
 
 ## Python packages requirement: 1) requests 2) Flask 3) datetime
 
@@ -38,9 +38,14 @@ The second way is to submit an input and the program will return a related outpu
 
     If the user ID does not exist or set as private (invalid ID), the return structure is {}
 
-- Then, I stored Steam ID that I already made a call in json file called __"SteamID_cache"__. If the ID is valid, it is stored in "valid_ID" key. If the ID is invalid, it is stored in "invalid_ID" key. This allows me to check whether I have already retrieved data for that particular ID and help to avoid redundant API calls. Also, since I can make a 100,000 call per day, I can learn the pattern of valid and invalid ID, and change a Steam ID random generate function to increase the chance getting a valid ID.
-    <p style="text-align: center;">Screen shot from "SteamID_cache"</p>
+    <p style="text-align: center;">Screen shot of example response</p>
 
+<p align="center"><img src="images/response_example.png" alt="response_example" width=800 hight=700></p>
+
+
+response_example
+- Then, I stored Steam ID that I already made a call in json file called __"SteamID_cache"__. If the ID is valid, it is stored in "valid_ID" key. If the ID is invalid, it is stored in "invalid_ID" key. This allows me to check whether I have already retrieved data for that particular ID and help to avoid redundant API calls. Also, since I can make a 100,000 call per day, I can learn the pattern of valid and invalid ID, and change a Steam ID random generate function to increase the chance of getting a valid ID.
+    <p style="text-align: center;">Screen shot from "SteamID_cache"</p>
 
 <p align="center"><img src="images/SteamID_cache_1.png" alt="SteamID_cache_1" width=800 hight=700></p>
 <p align="center"><img src="images/SteamID_cache_2.png" alt="SteamID_cache_2" width=800 hight=700></p>
