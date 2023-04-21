@@ -20,6 +20,8 @@ The second way is to submit an input and the program will return a related outpu
     2) submit a game ID and get 50 latest news of that game as an output.
     3) submit a game ID or game name to see the related ranks of that game, or submit a rank to see the what game is on that rank.
 
+## Python packages requirement: 1) requests 2) Flask 3) datetime
+
 # Data Structure 
 - There are 3 main goals of this project.
 
