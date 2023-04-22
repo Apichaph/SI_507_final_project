@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+C:/Users/apichaph/Documents/GitHub/SI_507_final_project/SI_507_final_project/ranking_combination.json filter=lfs diff=lfs merge=lfs -text
+C:/Users/apichaph/Documents/GitHub/SI_507_final_project/SI_507_final_project/Steam_graph_to_store.json filter=lfs diff=lfs merge=lfs -text

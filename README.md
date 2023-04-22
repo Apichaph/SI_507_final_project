@@ -5,7 +5,7 @@
 I got the Steam API from https://steamcommunity.com/dev/apikey. There is a condition that the Steam account must spend more than 5.00 USD in the Steam Store to be able to get the API key.
 
 ## How to interact with the program:
-I choose Flask to present the output. The python file to run the Flask is **'Apichaph_06_Flask'**. All the templates is stored in template folder. To run the webpage, simply open a terminal and navigate to the location where the file is stored.
+I choose Flask to present the output. The python file to run the Flask is **'Apichaph_06_Flask'**. All the templates are stored in template folder. To run the webpage, simply open a terminal and navigate to the location where the file is stored.
 Then, type *python Apichaph_06_Flask.py* in the terminal to allow running the webpage. Finally, access the homepage by going to http://127.0.0.1:5000/
 
 There are 2 ways to interact with the project. The first way is choosing the type of rank that web-user want to see. There are 3 types of rank 
@@ -38,12 +38,12 @@ The second way is to submit an input and the program will return a related outpu
 
     If the user ID does not exist or set as private (invalid ID), the return structure is {}
 
-    <p style="text-align: center;">Screen shot of example response</p>
+    <p style="text-align: center;">Screenshot of example response</p>
 
 <p align="center"><img src="images/response_example.png" alt="response_example" width=800 hight=700></p>
 
 - Then, I stored Steam ID that I already made a call in json file called __"SteamID_cache"__. If the ID is valid, it is stored in "valid_ID" key. If the ID is invalid, it is stored in "invalid_ID" key. This allows me to check whether I have already retrieved data for that particular ID and help to avoid redundant API calls. Also, since I can make a 100,000 call per day, I can learn the pattern of valid and invalid ID, and change a Steam ID random generate function to increase the chance of getting a valid ID.
-    <p style="text-align: center;">Screen shot from "SteamID_cache"</p>
+    <p style="text-align: center;">Screenshot from "SteamID_cache"</p>
 
 <p align="center"><img src="images/SteamID_cache_1.png" alt="SteamID_cache_1" width=800 hight=700></p>
 <p align="center"><img src="images/SteamID_cache_2.png" alt="SteamID_cache_2" width=800 hight=700></p>
@@ -56,7 +56,7 @@ The second way is to submit an input and the program will return a related outpu
         {"game_count": integer,
          "games": [{"appid": int, "name": str, "playtime_forever": int, ...}, ...]}, 
          ...}
-<p style="text-align: center;">Screen shot from "Game_owned_cache"</p>
+<p style="text-align: center;">Screenshot from "Game_owned_cache"</p>
 <p align="center"><img src="images/game_owned_cache.png" alt="game_owned_cache" width=800 hight=700></p>
 
 <br>
@@ -71,22 +71,22 @@ The second way is to submit an input and the program will return a related outpu
 
 <br>
 
-<p style="text-align: center;">Screen shot from "Cleaned_data_cache"</p>
+<p style="text-align: center;">Screenshot from "Cleaned_data_cache"</p>
 <p align="center"><img src="images/cleaned_data_cache.png" alt="cleaned_data_cache" width=800 hight=700></p>
 
 <br>
 
 **Apichaph_03_game_ranking**
-- This part is to achieve goal 1 and 2. I started from counting how many user own this game and then rank it. I did the same way to count how long people spent time on this game and then rank it. The final structure are [{"rank": int, "appid": str, "name": str, "count": int}, ...] and [{"rank": int, "appid": str, "name": str, "playtime": int}, ...]. I stored each list separately in json files. The one containing count (goal 1) is stored in __"ranking_owned_game"__ and another one containing playtime (goal 2) is stored in __"ranking_duration_game"__
+- This part is to achieve goal 1 and 2. I started from counting how many users own this game and then rank it. I did the same way to count how long people spent time on this game and then rank it. The final structure are [{"rank": int, "appid": str, "name": str, "count": int}, ...] and [{"rank": int, "appid": str, "name": str, "playtime": int}, ...]. I stored each list separately in json files. The one containing count (goal 1) is stored in __"ranking_owned_game"__ and another one containing playtime (goal 2) is stored in __"ranking_duration_game"__
 
 <br>
 
-<p style="text-align: center;">Screen shot from "ranking_owned_game"</p>
+<p style="text-align: center;">Screenshot from "ranking_owned_game"</p>
 <p align="center"><img src="images/rank_owned_game.png" alt="rank_owned_game" width=800 hight=700></p>
 
 <br>
 
-<p style="text-align: center;">Screen shot from "ranking_duration_game"</p>
+<p style="text-align: center;">Screenshot from "ranking_duration_game"</p>
 <p align="center"><img src="images/rank_duration_game.png" alt="rank_duration_game" width=800 hight=700></p>
 
 **Apichaph_04_game_graph**
@@ -99,7 +99,7 @@ The second way is to submit an input and the program will return a related outpu
 
     {game name which is a str : {another game name : weight which is an int, another game name : weight,...},...}
 
-<p style="text-align: center;">Screen shot from "Steam_graph_to_store"</p>
+<p style="text-align: center;">Screenshot from "Steam_graph_to_store"</p>
 <p align="center"><img src="images/Steam_graph_to_store.png" alt="Steam_graph_to_store" width=800 hight=700></p>
 
 - In order to read __"Steam_graph_to_store.json"__, use file __"Steam_graph_to_store.py"__ to read it. This file will convert json file into a graph object.
@@ -112,7 +112,7 @@ The second way is to submit an input and the program will return a related outpu
 
 <br>
 
-<p style="text-align: center;">Screen shot from "ranking_combination"</p>
+<p style="text-align: center;">Screenshot from "ranking_combination"</p>
 <p align="center"><img src="images/ranking_combination.png" alt="ranking_combination" width=800 hight=700></p>
 
 
@@ -121,12 +121,12 @@ The second way is to submit an input and the program will return a related outpu
 
 <br>
 
-<p style="text-align: center;">Screen shot from "game_id_name"</p>
+<p style="text-align: center;">Screenshot from "game_id_name"</p>
 <p align="center"><img src="images/game_id_name.png" alt="game_id_name" width=800 hight=700></p>
 
 **Apichaph_06_Flask**
-- Flask part, creating a webpage to present data with web-user.
-- In this code, I retrieve API call to get the latest 50 news of a specific game.
+- I created a webpage to present data with web-user using Flask. 
+- Furthermore in this code, I retrieve API call to get the latest 50 news of a specific game.
 
 
 
