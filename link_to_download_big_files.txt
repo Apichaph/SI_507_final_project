@@ -1,0 +1,9 @@
+There are 2 JSON files bigger than 100 MB
+1) ranking_combination : 449 MB
+2) Steam_graph_to_store : 310 MB
+
+I tried to upload by git LFS but it didn't work.
+So, I uploaded these files in google drive.
+The link to access these files on google drive is
+
+https://drive.google.com/drive/folders/14k6v6_frdUoHS1KK-kJav9sPwxloUw3R?usp=sharing
